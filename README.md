@@ -183,6 +183,11 @@ Multi-seed evaluation and extended ablation results will be added in future upda
 
 ---
 
+NOTE:
+GPU-enabled PyTorch should be installed according to the user's CUDA version.
+Refer to:
+https://pytorch.org/get-started/locally/
+
 # 📦 Model Weights
 
 Pretrained model weights will be released after paper acceptance.
