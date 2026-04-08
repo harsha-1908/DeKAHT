@@ -1,0 +1,35 @@
+# =========================
+#  SwKAT Training Stack
+# =========================
+
+# Core scientific stack
+numpy>=1.23
+scipy>=1.10
+pandas>=2.0
+scikit-learn>=1.2
+
+# Plotting & visualization
+matplotlib>=3.7
+seaborn>=0.12
+
+# Torch ecosystem (CPU wheels)
+# IMPORTANT: Install GPU-enabled PyTorch manually AFTER environment creation:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+torch==2.1.0
+torchvision==0.16.0
+
+# Image processing
+Pillow>=10.0
+
+# Distributed training utilities
+tensorboard>=2.12
+
+# Optional: logging & experiment tracking
+wandb>=0.16
+
+# Our model and modules
+einops>=0.6
+tqdm>=4.65
+
+# CUDA extension safety (if someone builds KAT locally)
+packaging>=23.0
