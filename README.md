@@ -47,7 +47,7 @@ GN-KAN-GELU architecture.
 
 Located in:
 
-kanact_variant/
+KAN_Act_varient/
 
 Implements:
 
