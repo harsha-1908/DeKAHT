@@ -33,7 +33,7 @@ This repository currently includes two main files:
 
 ```text
 swkat.py
-train_imagenet100.py
+train.py
 ```
 
 ### swkat.py
@@ -50,7 +50,7 @@ This file corresponds to:
 
 ---
 
-### train_imagenet100.py
+### train.py
 
 Contains:
 
