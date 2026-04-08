@@ -27,16 +27,31 @@ These naming differences are purely internal and **do not change the method desc
 
 ---
 
-# 📁 Repository Contents
+# Repository Structure
 
-This repository currently includes two main files:
+This repository contains two implementations:
 
-```text
-swkat.py
-train.py
-```
+## GELU Variant
 
-### swkat.py
+Located in:
+
+gelu_variant/
+
+Implements:
+
+GN-KAN-GELU architecture.
+
+---
+
+## KANAct Variant
+
+Located in:
+
+kanact_variant/
+
+Implements:
+
+GN-KAN-KANAct architecture with spline-based activations.
 
 Contains:
 
