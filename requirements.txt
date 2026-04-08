@@ -18,8 +18,8 @@ seaborn>=0.12
 # Example (CUDA 11.8):
 # pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 
-torch>=2.1.0
-torchvision>=0.16.0
+torch==2.1.0
+torchvision==0.16.0
 
 # Image processing
 Pillow>=10.0
