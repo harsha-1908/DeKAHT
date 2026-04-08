@@ -95,7 +95,7 @@ torchrun --nproc_per_node=2 \
   --model-variant swkat-tiny \
   --img-size 224 \
   --epochs 300 \
-  --batch-size 64 \
+  --batch-size 196 \
   --lr 1e-4 \
   --weight-decay 0.05 \
   --warmup-epochs 5 \
