@@ -189,21 +189,6 @@ Pretrained model weights will be released after paper acceptance.
 
 ---
 
-# 📜 Citation
-
-If you use this code, please cite:
-
-```bibtex
-@article{dekaht2026,
-  title={DeKAHT: Data-Efficient Kolmogorov-Arnold Hierarchical Transformer},
-  author={Thilak, Gurram Harshamanya and Kumari, Saloni and Jha, Rajib Kumar},
-  journal={IEEE ICIP},
-  year={2026}
-}
-```
-
----
-
 # 📬 Contact
 
 Gurram Harshamanya Thilak
