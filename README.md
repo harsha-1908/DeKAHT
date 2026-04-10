@@ -20,7 +20,7 @@ This codebase was developed using earlier internal naming conventions.
 
 Therefore:
 
-* `swkat.py` implements the **DeKAHT architecture**
+* `dekaht.py` implements the **DeKAHT architecture**
 * `GRKAN` modules inside the code correspond to **GN-KAN modules described in the paper**
 
 These naming differences are purely internal and **do not change the method described in the paper**.
