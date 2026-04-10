@@ -41,7 +41,7 @@ except Exception:
     WANDB_AVAILABLE = False
 
 # import model entrypoint and types
-from swkat import SwkatGRKAN_Opt, set_prefer_kat, GR_KAN_Conv, SwkatBlockOpt
+from dekaht import SwkatGRKAN_Opt, set_prefer_kat, GR_KAN_Conv, SwkatBlockOpt
 
 # -----------------------------
 def parse_args():
