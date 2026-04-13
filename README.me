@@ -162,48 +162,40 @@ https://pytorch.org/get-started/locally/
 ## GELU Variant Training
 
 ```bash
-cd gelu_variant
-
-python train.py \
-  --data /path/to/dataset \
-  --model-variant tiny \
+torchrun --nproc_per_node=2 \
+  /home/gurramht_iitp/DEKAHT/train.py \
+  --data /scratch/gurramht_iitp/datasets/imagenet10 \
+  --model-variant swkat-tiny \
+  --img-size 224 \
   --epochs 300 \
-  --batch-size 256 \
+  --batch-size 196 \
+  --lr 1e-4 \
+  --weight-decay 0.05 \
+  --warmup-epochs 5 \
+  --opt adamw \
+  --num-classes 10 \
   --workers 8 \
-  --output-dir outputs/gelu/tiny
-```
+  --output-dir /scratch/gurramht_iitp/outputs/DEKAHT/imagenet10/tiny \
+  --use-custom-kan \
+  --grad-clip 1.0 \
+  --no-amp \
+  --mixup-alpha 0.0 \
+  --cutmix-alpha 0.0 \
+  --label-smoothing 0.0 \
+  --ramp-epochs 0
 
+```
 ---
 
 ## KANAct Variant Training
 
-```bash
-cd KAN_Act_variant
-
-python train.py \
-  --data /path/to/dataset \
-  --model-variant tiny \
-  --epochs 300 \
-  --batch-size 256 \
-  --workers 8 \
-  --output-dir outputs/kanact/tiny
-```
+Use same training recipe as gelu variant, but suggested to use smaller batch sizes between 8 to 128 as KAN activation is very unstable.
 
 ---
 
 ## Hybrid Variant Training (Example)
 
-```bash
-cd hybrid_variants_for_ablation/swmsa_mlp_wmsa_kan_hybrid_DEKAHT
-
-python train_dekaht_hybrid.py \
-  --data /path/to/dataset \
-  --model-variant tiny \
-  --epochs 300 \
-  --batch-size 256 \
-  --workers 8 \
-  --output-dir outputs/hybrid_A/tiny
-```
+Same as gelu varient.
 
 ---
 
