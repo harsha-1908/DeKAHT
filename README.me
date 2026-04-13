@@ -1,0 +1,317 @@
+# DeKAHT: Data-Efficient Kolmogorov-Arnold Hierarchical Transformer
+
+Official PyTorch implementation of **DeKAHT**, a hierarchical vision transformer designed to improve **data efficiency** by replacing standard feed-forward networks with **Grouped Nonlinear KAN (GN-KAN)** modules.
+
+This repository accompanies the paper:
+
+**DeKAHT: Data-Efficient Kolmogorov-Arnold Hierarchical Transformer**  
+(Under review at IEEE ICIP 2026)
+
+---
+
+# ⚠️ Important Naming Clarification
+
+This codebase was developed using earlier internal naming conventions.
+
+| Paper Name | Code Name |
+|------------|-----------|
+| **DeKAHT** | Internal naming retained in code |
+| **GN-KAN** | **GRKAN** |
+
+Therefore:
+
+- `dekaht.py` implements the **DeKAHT architecture**
+- `GRKAN` modules inside the code correspond to **GN-KAN modules described in the paper**
+
+These naming differences are purely internal and **do not affect the methodology described in the manuscript**.
+
+---
+
+# 📂 Repository Structure
+
+```
+.
+├── KAN_Act_variant/
+│   ├── dekaht.py
+│   └── train.py
+│
+├── gelu_variant/
+│   ├── dekaht.py
+│   └── train.py
+│
+├── hybrid_variants_for_ablation/
+│   ├── swmsa_mlp_wmsa_kan_hybrid_DEKAHT/
+│   │   ├── dekaht_hybrid.py
+│   │   └── train_dekaht_hybrid.py
+│   │
+│   ├── wmsa_mlp_swmsa_kan_hybrid_DEKAHT/
+│   │   ├── dekaht_hybrid_wmsa_kan.py
+│   │   └── train_dekaht_hybrid.py
+│
+├── ablation_results.md
+├── example_run.sh
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🧠 Implemented Variants
+
+## 1️⃣ GELU Variant
+
+Location:
+
+```
+gelu_variant/
+```
+
+Implements:
+
+**GN-KAN-GELU**
+
+Used as the **stable baseline variant**, especially for larger datasets.
+
+---
+
+## 2️⃣ KANAct Variant
+
+Location:
+
+```
+KAN_Act_variant/
+```
+
+Implements:
+
+**GN-KAN-KANAct**
+
+Uses spline-based nonlinear activations inspired by Kolmogorov–Arnold Networks.
+
+---
+
+## 3️⃣ Hybrid Variants (Ablation Study)
+
+Location:
+
+```
+hybrid_variants_for_ablation/
+```
+
+These variants evaluate the effect of GN-KAN placement.
+
+### Hybrid Variant A
+
+```
+swmsa_mlp_wmsa_kan_hybrid_DEKAHT/
+```
+
+Configuration:
+
+```
+SW-MSA → MLP  
+W-MSA → GN-KAN
+```
+
+---
+
+### Hybrid Variant B
+
+```
+wmsa_mlp_swmsa_kan_hybrid_DEKAHT/
+```
+
+Configuration:
+
+```
+W-MSA → MLP  
+SW-MSA → GN-KAN
+```
+
+All hybrid results are documented in:
+
+```
+ablation_results.md
+```
+
+---
+
+# ⚙️ Installation
+
+Create environment:
+
+```bash
+conda create -n dekaht python=3.10
+conda activate dekaht
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Install GPU-enabled PyTorch according to your CUDA version:
+
+https://pytorch.org/get-started/locally/
+
+---
+
+# 🚀 Training Examples
+
+## GELU Variant Training
+
+```bash
+cd gelu_variant
+
+python train.py \
+  --data /path/to/dataset \
+  --model-variant tiny \
+  --epochs 300 \
+  --batch-size 256 \
+  --workers 8 \
+  --output-dir outputs/gelu/tiny
+```
+
+---
+
+## KANAct Variant Training
+
+```bash
+cd KAN_Act_variant
+
+python train.py \
+  --data /path/to/dataset \
+  --model-variant tiny \
+  --epochs 300 \
+  --batch-size 256 \
+  --workers 8 \
+  --output-dir outputs/kanact/tiny
+```
+
+---
+
+## Hybrid Variant Training (Example)
+
+```bash
+cd hybrid_variants_for_ablation/swmsa_mlp_wmsa_kan_hybrid_DEKAHT
+
+python train_dekaht_hybrid.py \
+  --data /path/to/dataset \
+  --model-variant tiny \
+  --epochs 300 \
+  --batch-size 256 \
+  --workers 8 \
+  --output-dir outputs/hybrid_A/tiny
+```
+
+---
+
+# 📊 Ablation Results
+
+All experimental results are summarized in:
+
+```
+ablation_results.md
+```
+
+This includes:
+
+- GELU vs KANAct comparison  
+- Group size analysis (G sweep)  
+- Hybrid placement ablations  
+- DeiT baseline comparison  
+- Multi-dataset evaluations  
+- Stability analysis  
+
+This file is continuously updated with new results.
+
+---
+
+# 📂 Datasets Used
+
+Experiments were conducted using:
+
+- ImageNet-10  
+- ImageNet-100  
+- Brain Tumor MRI (4-class)  
+- Brain Tumor MRI (44-class)
+
+Medical datasets were aggregated from publicly available sources including:
+
+- Figshare Brain Tumor Dataset  
+- SARTAJ Brain MRI Dataset  
+- Br35H Dataset  
+
+Dataset preparation scripts and links will be released after paper acceptance.
+
+---
+
+# 🧠 Method Overview
+
+DeKAHT replaces the standard feed-forward network (FFN) in hierarchical transformers with a **Grouped Nonlinear KAN (GN-KAN)** module.
+
+The GN-KAN module consists of:
+
+- Channel expansion  
+- Nonlinear transformation  
+- Channel grouping  
+- Depthwise spatial convolution  
+- Gated recomposition  
+- Projection layer  
+
+This improves:
+
+- Nonlinear diversity  
+- Feature separability  
+- Data efficiency  
+
+while maintaining:
+
+- Comparable parameter count  
+- Comparable computational cost  
+
+relative to baseline transformer architectures.
+
+---
+
+# 🔬 Reproducibility
+
+All experiments:
+
+- Trained from scratch  
+- Used consistent preprocessing  
+- Used identical hyperparameters  
+
+Additional:
+
+- Hybrid placement studies included  
+- Group size ablations included  
+- DeiT comparisons included  
+
+All experimental summaries are documented in:
+
+```
+ablation_results.md
+```
+
+---
+
+# 📦 Model Weights
+
+Pretrained model weights will be released after paper acceptance.
+
+---
+
+# 📬 Contact
+
+**Gurram Harshamanya Thilak**  
+Indian Institute of Technology Patna  
+
+For research-related inquiries, please contact via institutional email.
+
+---
+
+# ⚠️ Disclaimer
+
+This repository is released strictly for **academic and research purposes**.
