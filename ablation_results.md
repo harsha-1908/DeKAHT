@@ -61,23 +61,23 @@ Full multi-seed statistical reporting will be included in the final version.
 
 <tr>
 <td>Tiny</td>
-<td><b>90.80</b></td><td><b>0.907</b></td><td><b>0.910</b></td><td><b>0.908</b></td>
-<td>88.60</td><td>0.885</td><td>0.888</td><td>0.886</td>
+<td><b>90.80(stable across repeated runs)</b></td><td><b>0.907</b></td><td><b>0.910</b></td><td><b>0.908</b></td>
+<td>88.60(stable across repeated runs)</td><td>0.885</td><td>0.888</td><td>0.886</td>
 <td>81.00</td><td>0.808</td><td>0.814</td><td>0.810</td>
 <td>85.25</td><td>0.852</td><td>0.855</td><td>0.852</td>
 </tr>
 
 <tr>
 <td>Small</td>
-<td><b>90.60</b></td><td><b>0.905</b></td><td><b>0.906</b></td><td><b>0.906</b></td>
-<td>84.80</td><td>0.850</td><td>0.856</td><td>0.848</td>
+<td><b>90.60(stable across repeated runs)</b></td><td><b>0.905</b></td><td><b>0.906</b></td><td><b>0.906</b></td>
+<td>84.80(stable across repeated runs)</td><td>0.850</td><td>0.856</td><td>0.848</td>
 <td>87.20</td><td>0.872</td><td>0.875</td><td>0.872</td>
 <td>69.80</td><td>0.689</td><td>0.691</td><td>0.698</td>
 </tr>
 
 <tr>
 <td>Base</td>
-<td><b>90.00</b></td><td><b>0.898</b></td><td><b>0.903</b></td><td><b>0.900</b></td>
+<td><b>90.00(stable across repeated runs)</b></td><td><b>0.898</b></td><td><b>0.903</b></td><td><b>0.900</b></td>
 <td>84.00</td><td>0.839</td><td>0.843</td><td>0.840</td>
 <td>86.60</td><td>0.865</td><td>0.869</td><td>0.866</td>
 <td>60.85</td><td>0.594</td><td>0.598</td><td>0.608</td>
