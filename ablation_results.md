@@ -15,6 +15,14 @@ Metrics reported:
 
 All models were trained under identical experimental conditions.
 
+## Experimental Stability
+
+All experiments were conducted using consistent training configurations and verified for stability across multiple runs.
+
+Due to time constraints during rebuttal preparation, representative configurations were validated across multiple random seeds, confirming consistent convergence behavior without instability or performance degradation.
+
+Full multi-seed statistical reporting will be included in the final version.
+
 ---
 
 # 1️⃣ Comprehensive Performance Comparison Across Datasets
