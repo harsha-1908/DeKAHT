@@ -293,15 +293,6 @@ Pretrained model weights will be released after paper acceptance.
 
 ---
 
-# 📬 Contact
-
-**Gurram Harshamanya Thilak**  
-Indian Institute of Technology Patna  
-
-For research-related inquiries, please contact via institutional email.
-
----
-
 # ⚠️ Disclaimer
 
 This repository is released strictly for **academic and research purposes**.
