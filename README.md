@@ -224,18 +224,16 @@ This file is continuously updated with new results.
 
 Experiments were conducted using:
 
-- ImageNet-10  
-- ImageNet-100  
-- Brain Tumor MRI (4-class)  
-- Brain Tumor MRI (44-class)
+- ImageNet-10  - https://www.image-net.org/index.php
+- ImageNet-100  - https://www.image-net.org/index.php
+- Brain Tumor MRI (4-class)  - https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset
+- Brain Tumor MRI (44-class) - https://www.kaggle.com/datasets/fernando2rad/brain-tumor-mri-images-44c
 
 Medical datasets were aggregated from publicly available sources including:
 
 - Figshare Brain Tumor Dataset  
 - SARTAJ Brain MRI Dataset  
 - Br35H Dataset  
-
-Dataset preparation scripts and links will be released after paper acceptance.
 
 ---
 
