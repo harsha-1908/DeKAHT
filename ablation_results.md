@@ -8,10 +8,10 @@ All reported values correspond to:
 
 Metrics reported:
 
-- Accuracy  
-- F1-score  
-- Precision  
-- Recall  
+- Accuracy  (Acc.)
+- F1-score  (F1)
+- Precision  (Prec.)
+- Recall or Sensitivity (Rec.)
 
 All models were trained under identical experimental conditions.
 
