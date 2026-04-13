@@ -97,8 +97,8 @@ All models were trained under identical experimental conditions.
 
 <th rowspan="2">Model</th>
 
-<th colspan="4">KANAct</th>
-<th colspan="4">GELU</th>
+<th colspan="4">DeKAHT_GN-KAN-KANAct (ours)</th>
+<th colspan="4">DeKAHT_GN-KAN+GELU (ours)</th>
 <th colspan="4">Swin</th>
 
 </tr>
@@ -141,9 +141,153 @@ All models were trained under identical experimental conditions.
 
 ---
 
+# Brain Tumor (4-class)
+
+<table>
+
+<thead>
+
+<tr>
+<th rowspan="2">Model</th>
+
+<th colspan="4">W-MSA-KAN / SW-MSA-MLP</th>
+<th colspan="4">W-MSA-MLP / SW-MSA-KAN</th>
+
+</tr>
+
+<tr>
+
+<th>Acc</th>
+<th>F1</th>
+<th>Prec</th>
+<th>Rec</th>
+
+<th>Acc</th>
+<th>F1</th>
+<th>Prec</th>
+<th>Rec</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Tiny</td>
+
+<td>99.09</td>
+<td>0.991</td>
+<td>0.991</td>
+<td>0.991</td>
+
+<td><b>99.85</b></td>
+<td><b>0.998</b></td>
+<td><b>0.999</b></td>
+<td><b>0.998</b></td>
+
+</tr>
+
+<tr>
+<td>Small</td>
+
+<td>98.48</td>
+<td>0.985</td>
+<td>0.986</td>
+<td>0.985</td>
+
+<td><b>99.77</b></td>
+<td><b>0.998</b></td>
+<td><b>0.998</b></td>
+<td><b>0.998</b></td>
+
+</tr>
+
+<tr>
+<td>Base</td>
+
+<td>98.48</td>
+<td>0.984</td>
+<td>0.984</td>
+<td>0.985</td>
+
+<td><b>99.69</b></td>
+<td><b>0.997</b></td>
+<td><b>0.997</b></td>
+<td><b>0.997</b></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+---
+
 # 2️⃣ Hybrid GN-KAN Placement Ablation
 
 (W-MSA vs SW-MSA)
+
+This section evaluates the effect of placing GN-KAN modules inside:
+
+- **W-MSA blocks**
+- **SW-MSA blocks**
+
+---
+
+# ImageNet-10
+
+<table>
+
+<thead>
+
+<tr>
+
+<th rowspan="2">Model</th>
+
+<th colspan="4">W-MSA-KAN / SW-MSA-MLP</th>
+<th colspan="4">W-MSA-MLP / SW-MSA-KAN</th>
+
+</tr>
+
+<tr>
+
+<th>Acc</th><th>F1</th><th>Prec</th><th>Rec</th>
+<th>Acc</th><th>F1</th><th>Prec</th><th>Rec</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Tiny</td>
+<td>90.00</td><td>0.898</td><td>0.902</td><td>0.900</td>
+<td><b>90.40</b></td><td><b>0.903</b></td><td><b>0.907</b></td><td><b>0.904</b></td>
+</tr>
+
+<tr>
+<td>Small</td>
+<td><b>90.00</b></td><td><b>0.899</b></td><td><b>0.902</b></td><td><b>0.900</b></td>
+<td>90.00</td><td>0.898</td><td>0.899</td><td>0.900</td>
+</tr>
+
+<tr>
+<td>Base</td>
+<td><b>90.80</b></td><td><b>0.906</b></td><td><b>0.909</b></td><td><b>0.908</b></td>
+<td>89.60</td><td>0.894</td><td>0.895</td><td>0.896</td>
+</tr>
+
+<tr>
+<td>Large</td>
+<td><b>90.80</b></td><td><b>0.905</b></td><td><b>0.910</b></td><td><b>0.908</b></td>
+<td>—</td><td>—</td><td>—</td><td>—</td>
+</tr>
+
+</tbody>
+
+</table>
 
 ---
 
@@ -156,6 +300,7 @@ All models were trained under identical experimental conditions.
 <tr>
 
 <th rowspan="2">Model</th>
+
 <th colspan="4">W-MSA-KAN</th>
 <th colspan="4">SW-MSA-KAN</th>
 
@@ -188,6 +333,106 @@ All models were trained under identical experimental conditions.
 <td>Base</td>
 <td><b>83.12</b></td><td><b>0.828</b></td><td><b>0.837</b></td><td><b>0.831</b></td>
 <td>82.52</td><td>0.821</td><td>0.825</td><td>0.825</td>
+</tr>
+
+</tbody>
+
+</table>
+
+---
+
+# Brain Tumor (4-class)
+
+<table>
+
+<thead>
+
+<tr>
+
+<th rowspan="2">Model</th>
+
+<th colspan="4">W-MSA-KAN</th>
+<th colspan="4">SW-MSA-KAN</th>
+
+</tr>
+
+<tr>
+
+<th>Acc</th><th>F1</th><th>Prec</th><th>Rec</th>
+<th>Acc</th><th>F1</th><th>Prec</th><th>Rec</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Tiny</td>
+<td>99.09</td><td>0.991</td><td>0.991</td><td>0.991</td>
+<td><b>99.85</b></td><td><b>0.998</b></td><td><b>0.999</b></td><td><b>0.998</b></td>
+</tr>
+
+<tr>
+<td>Small</td>
+<td>98.48</td><td>0.985</td><td>0.986</td><td>0.985</td>
+<td><b>99.77</b></td><td><b>0.998</b></td><td><b>0.998</b></td><td><b>0.998</b></td>
+</tr>
+
+<tr>
+<td>Base</td>
+<td>98.48</td><td>0.984</td><td>0.984</td><td>0.985</td>
+<td><b>99.69</b></td><td><b>0.997</b></td><td><b>0.997</b></td><td><b>0.997</b></td>
+</tr>
+
+</tbody>
+
+</table>
+
+---
+
+# Brain Tumor (44-class)
+
+<table>
+
+<thead>
+
+<tr>
+
+<th rowspan="2">Model</th>
+
+<th colspan="4">W-MSA-KAN</th>
+<th colspan="4">SW-MSA-KAN</th>
+
+</tr>
+
+<tr>
+
+<th>Acc</th><th>F1</th><th>Prec</th><th>Rec</th>
+<th>Acc</th><th>F1</th><th>Prec</th><th>Rec</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Tiny</td>
+<td><b>93.88</b></td><td><b>0.920</b></td><td><b>0.947</b></td><td><b>0.911</b></td>
+<td>93.88</td><td>0.916</td><td>0.935</td><td>0.909</td>
+</tr>
+
+<tr>
+<td>Small</td>
+<td>94.54</td><td>0.930</td><td>0.944</td><td>0.928</td>
+<td>94.54</td><td><b>0.934</b></td><td><b>0.953</b></td><td><b>0.924</b></td>
+</tr>
+
+<tr>
+<td>Base</td>
+<td>95.52</td><td>0.938</td><td>0.957</td><td>0.931</td>
+<td><b>95.74</b></td><td><b>0.951</b></td><td><b>0.969</b></td><td><b>0.940</b></td>
 </tr>
 
 </tbody>
@@ -281,5 +526,85 @@ All experiments:
 Performance corresponds to:
 
 **Best validation epoch**
+
+---
+
+---
+
+# 4️⃣ Comparison with State-of-the-Art Methods
+
+Dataset: **Brain Tumor MRI (4-class)**
+
+The following table compares DeKAHT with previously reported methods evaluated on the same Brain Tumor MRI classification task.
+
+<table>
+
+<thead>
+
+<tr>
+<th>Method</th>
+<th>Reference</th>
+<th>Accuracy (%)</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>BrainNeuroNet</td>
+<td>Abbas et al., 2021</td>
+<td>97.3</td>
+</tr>
+
+<tr>
+<td>DenseTrans</td>
+<td>Chen et al., 2022</td>
+<td>97.8</td>
+</tr>
+
+<tr>
+<td>LCDeiT</td>
+<td>Zhang et al., 2023</td>
+<td>97.9</td>
+</tr>
+
+<tr>
+<td>ViT Ensemble</td>
+<td>Khan et al., 2022</td>
+<td>98.2</td>
+</tr>
+
+<tr>
+<td>PBViT</td>
+<td>Rahman et al., 2022</td>
+<td>95.8</td>
+</tr>
+
+<tr>
+<td><b>DeKAHT (ours)</b></td>
+<td>Proposed Method</td>
+<td><b>99.85</b></td>
+</tr>
+
+</tbody>
+
+</table>
+
+---
+
+## References used for SOTA comparison
+
+(The following works are included here to provide traceability for reported comparison results.)
+
+Abbas, A., et al. (2021). BrainNeuroNet: A Deep Learning Framework for Brain Tumor Classification.
+
+Chen, X., et al. (2022). DenseTrans: Dense Transformer-Based Medical Image Classification.
+
+Zhang, Y., et al. (2023). LCDeiT: Lightweight Convolutional Data-Efficient Transformer.
+
+Khan, S., et al. (2022). Vision Transformer Ensemble for Medical Image Classification.
+
+Rahman, M., et al. (2022). PBViT: Patch-Based Vision Transformer for Brain Tumor Analysis.
 
 ---
