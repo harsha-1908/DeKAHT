@@ -5,7 +5,7 @@ Official PyTorch implementation of **DeKAHT**, a hierarchical vision transformer
 This repository accompanies the paper:
 
 **DeKAHT: Data-Efficient Kolmogorov-Arnold Hierarchical Transformer**  
-(Under review at IEEE ICIP 2026)
+
 
 ---
 
