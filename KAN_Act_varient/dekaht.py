@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# swkat.py - production-ready Swkat-GR-KAN with dynamic-resolution support + variant factory
+# dekaht.py - production-ready Swkat-GR-KAN with dynamic-resolution support + variant factory
 # - pure-PyTorch KAN-FFN (no compiled kat_rational dependency)
 # - robust window partition/reverse with padding
 # - GR_KAN_Conv is the single MLP replacement used (no fallback to classic Linear-FFN)
