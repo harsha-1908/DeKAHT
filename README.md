@@ -296,3 +296,10 @@ Pretrained model weights will be released after paper acceptance.
 # ⚠️ Disclaimer
 
 This repository is released strictly for **academic and research purposes**.
+
+---
+
+# ⚖️ Copyright
+
+Copyright (c) 2026 Gurram Harshamanya Thilak [ All Rights Reserved ]
+
